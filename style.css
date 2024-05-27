@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    perspective: 1000px;
+    overflow: hidden;
+    background-color: #5d5858b3;
+}
+
+.wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    perspective: 600px;
+    transition: all 0.25s linear;
+    transform-style: preserve-3d;
+}
+
+.photo {
+    position: absolute;
+    top: var(--photo-y);
+    left: var(--photo-x);
+    width: 250px;
+    height: 200px;
+    filter: brightness(var(--photo-brightness));
+    z-index: var(--photo-index);
+    transform: translateZ(var(--photo-z));
+    transition: all 0.5s linear;
+    box-shadow: 0 0 20px 5px rgba(80, 78, 78, 0.786);
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.photo:hover {
+    box-shadow: 0 0 20px 5px rgb(231, 209, 7);
+    filter: brightness(1);
+}
